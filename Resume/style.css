@@ -1,0 +1,228 @@
+:root {
+    --primary-color: #1a2a44; /* Deep Navy */
+    --accent-color: #2563eb; /* Modern Blue */
+    --text-main: #2d3748;
+    --text-muted: #4a5568;
+    --bg-color: #ffffff;
+    --section-gap: 1.2rem;
+    --border-color: #e2e8f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+    color: var(--text-main);
+    background-color: #f7fafc;
+    padding: 2rem 0;
+}
+
+.resume-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: var(--bg-color);
+    padding: 3rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    min-height: 29.7cm; /* A4 height approx */
+}
+
+/* Header */
+header {
+    text-align: center;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.contact-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.contact-info a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.contact-info a:hover {
+    text-decoration: underline;
+}
+
+.dot {
+    color: var(--border-color);
+}
+
+/* Summary */
+.summary {
+    margin-bottom: var(--section-gap);
+    font-size: 0.95rem;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+/* Layout */
+.main-content {
+    display: grid;
+    grid-template-columns: 1.8fr 1fr;
+    gap: 2.5rem;
+}
+
+h2 {
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+/* Projects */
+.project {
+    margin-bottom: 1.2rem;
+}
+
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 0.4rem;
+}
+
+.project h3 {
+    font-size: 1rem;
+    color: var(--text-main);
+    font-weight: 600;
+}
+
+.tech-stack {
+    font-size: 0.75rem;
+    color: var(--accent-color);
+    font-weight: 600;
+    background: #eff6ff;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+ul {
+    list-style: none;
+}
+
+ul li {
+    font-size: 0.85rem;
+    position: relative;
+    padding-left: 1.2rem;
+    margin-bottom: 0.3rem;
+    color: var(--text-muted);
+}
+
+ul li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--accent-color);
+    font-weight: bold;
+}
+
+/* Right Column */
+.skills-group {
+    margin-bottom: 1rem;
+}
+
+.skills-group h4 {
+    font-size: 0.85rem;
+    color: var(--text-main);
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+
+.skills-group p {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+.edu-item strong {
+    font-size: 0.95rem;
+}
+
+.edu-item p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.date {
+    font-weight: 500;
+    color: var(--text-main) !important;
+    margin-top: 2px;
+}
+
+.cert-list li, .achieve-list li {
+    font-size: 0.85rem;
+}
+
+/* Print Button */
+.print-btn {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    padding: 0.8rem 1.5rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+}
+
+.print-btn:hover {
+    transform: scale(1.05);
+}
+
+/* Media Queries for Print */
+@media print {
+    body {
+        padding: 0;
+        background: white;
+    }
+    .resume-container {
+        box-shadow: none;
+        padding: 1cm;
+        max-width: 100%;
+        margin: 0;
+    }
+    .print-btn {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        grid-template-columns: 1fr;
+    }
+    .resume-container {
+        padding: 1.5rem;
+    }
+}
